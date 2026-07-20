@@ -401,24 +401,31 @@ h3 {
 /* —— Leadership —— */
 .leadership-list {
   display: grid;
-  gap: clamp(2rem, 5vw, 3rem);
-  margin-top: 1rem;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 2.5rem;
+  margin: 1rem auto 0;
+  width: 100%;
+  max-width: 40rem;
+  padding: 0;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 560px) {
   .leadership-list {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(2.5rem, 6vw, 5rem);
   }
 }
 
 .leader {
   text-align: center;
+  width: 100%;
 }
 
 .leader h3 {
   font-size: clamp(0.95rem, 2vw, 1.05rem);
   letter-spacing: 0.16em;
+  padding-left: 0.16em; /* optical center with letter-spacing */
   color: var(--navy);
 }
 
@@ -435,6 +442,7 @@ h3 {
   font-family: var(--font-display);
   font-size: 0.72rem;
   letter-spacing: 0.2em;
+  padding-left: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
 }
@@ -459,10 +467,18 @@ h3 {
 }
 
 .portfolio-link h3 {
-  font-size: clamp(1.2rem, 3vw, 1.55rem);
-  letter-spacing: 0.14em;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  letter-spacing: 0.02em;
+  text-transform: none;
   color: var(--navy);
   margin-bottom: 0.75rem;
+}
+
+.portfolio-link .brand-iq {
+  color: var(--gold);
+  font-weight: 600;
 }
 
 .portfolio-link p {
